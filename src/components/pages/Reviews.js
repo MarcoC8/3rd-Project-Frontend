@@ -1,7 +1,8 @@
 import {React, useState, useEffect } from 'react';
 import axios from 'axios';
 import './Reviews.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 function Reviews() {
 
@@ -42,7 +43,7 @@ function Reviews() {
   }})
     
     .then(axiosResponse => {
-      naviagte('/bookings');
+      naviagte('/thankyou');
     })
     .catch(err => console.log(err));
   }

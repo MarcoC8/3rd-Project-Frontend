@@ -13,7 +13,7 @@
     "react-dom": "^18.2.0",
     "react-phone-number-input": "^3.2.13",
     "react-responsive-masonry": "^2.1.7",
-    "react-router-dom": "^6.5.0",
+    "react-router-dom": "^6.6.0",
     "react-scripts": "5.0.1",
     "reactstrap": "^9.1.5",
     "typescript": "^4.9.4",

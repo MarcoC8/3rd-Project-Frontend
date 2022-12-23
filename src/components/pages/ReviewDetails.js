@@ -1,7 +1,7 @@
 import {React, useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 function ReviewDetails() {
 
@@ -37,6 +37,7 @@ function ReviewDetails() {
             )
             .then(axiosResponse => {
                 console.log(axiosResponse);
+                naviagte('/reviews')
             })
             .catch(err => console.log(err));
         }  
@@ -78,6 +79,7 @@ function ReviewDetails() {
                      axiosResponse.data.rating, 
                     img: axiosResponse.data.img, 
                     description: axiosResponse.data.description})
+                    naviagte('/reviews');
             })
             .catch(err => console.log(err));
           }
