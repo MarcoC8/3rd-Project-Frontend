@@ -20,7 +20,7 @@ function Signup() {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    axios.post('http:localhost:3001/auth/signup', state)
+    axios.post('http://localhost:3001/auth/signup', state)
     .then(axiosResponse => {
       naviagte('/login');
     })
@@ -36,7 +36,7 @@ function Signup() {
         <label>Name</label>
         <input value={state.name} name='name' onChange={updateState} />
         <label>Password</label>
-        <input value={state.password} name='password' onchange={updateState} />
+        <input value={state.password} name='password' onChange={updateState} />
         <button>Sign Up</button>
       </form>
     </div>

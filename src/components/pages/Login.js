@@ -1,12 +1,12 @@
 import {useState, useContext} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router'
-// import { AuthContext }
+import { AuthContext } from '../../context/auth.context'
 import App from '../../App'
 
 function Login() {
 
-  const { storeToken, authenticateUser } = useContext(); //need to pass in AuthContext
+  const { storeToken, authenticateUser } = useContext(AuthContext); //need to pass in AuthContext
 
   const naviagte = useNavigate();
 
@@ -15,7 +15,7 @@ function Login() {
     password: ''
   });
 
-  const updateState = e => ({
+  const updateState = e => setState({
     ...state,
     [e.target.name]: e.target.value
   });
@@ -24,9 +24,10 @@ function Login() {
     e.preventDefault();
     axios.post('http://localhost:3001/auth/login', state)
     .then(axiosResponse => {
+      console.log(axiosResponse.data)
       storeToken(axiosResponse.data.authToken);
       authenticateUser();
-      naviagte('/');
+      naviagte('/about-us');
     })
     .catch(err => console.log(err));
   }
