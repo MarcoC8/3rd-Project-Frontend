@@ -21,7 +21,7 @@ function ReviewDetails() {
         // const [review, setReview] = useState(null);
 
         const deleteReviewDetails = (reviewId) => {
-            axios.delete(`http://localhost:3001/user/reviews/${reviewId}`, {
+            axios.delete(`${process.env.REACT_APP_BACKEND_URL}/user/reviews/${reviewId}`, {
                 header: {
                     authorization: `Bearer ${localStorage.getItem('authToken')}`
                 }
@@ -33,7 +33,7 @@ function ReviewDetails() {
         }  
       
         const getReviewDetails = () => {
-          axios.get(`http://localhost:3001/user/reviews/${reviewId}`, {
+          axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/reviews/${reviewId}`, {
           headers: {
             authorization: `Bearer ${localStorage.getItem('authToken')}`
           }
@@ -56,7 +56,7 @@ function ReviewDetails() {
 
         const onFormSubmit = e => {
             e.preventDefault();
-            axios.post(`http://localhost:3001/user/reviews/${reviewId}`, state,  
+            axios.post(`${process.env.REACT_APP_BACKEND_URL}/${reviewId}`, state,  
             {
               headers: {
                 authorization: `Bearer ${localStorage.getItem('authToken')}`

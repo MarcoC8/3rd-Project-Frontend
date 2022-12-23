@@ -22,7 +22,7 @@ function Login() {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    axios.post('http://localhost:3001/auth/login', state)
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, state)
     .then(axiosResponse => {
       console.log(axiosResponse.data)
       storeToken(axiosResponse.data.authToken);

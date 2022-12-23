@@ -22,7 +22,7 @@ function Reviews() {
   const [reviewsArray, setReviewsArray] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/user/reviews`, {
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/reviews`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem('authToken')}`
       }
@@ -36,7 +36,7 @@ function Reviews() {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    axios.post('http://localhost:3001/user/reviews', state,  
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/reviews`, state,  
     {
       headers: {
         authorization: `Bearer ${localStorage.getItem('authToken')}`
@@ -98,7 +98,7 @@ function Reviews() {
                 <option value='4- Satisfied'>4- Satisfied</option>
                 <option value='5- Very Satisfied'>5- Very Satisfied</option>
             </select>
-            <input type="file" value={state.img} name='img' onChange={updateState}/>
+            {/* <input type="file" value={state.img} name='img' onChange={updateState}/> */}
             <textarea placeholder='Tell us how you feel!' value={state.description} name='description' onChange={updateState}>
             </textarea>
             <button>Submit!</button>

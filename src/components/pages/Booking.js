@@ -42,7 +42,7 @@ function Booking() {
 
       const onFormSubmit = e => {
         e.preventDefault();
-        axios.post('http://localhost:3001/event/bookings', state,  
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/event/bookings`, state,  
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem('authToken')}`
