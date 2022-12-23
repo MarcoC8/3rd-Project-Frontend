@@ -1,8 +1,7 @@
 import {React, useState, useEffect } from 'react';
 import axios from 'axios';
 import './Reviews.css';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Reviews() {
 
@@ -98,7 +97,7 @@ function Reviews() {
                 <option value='4- Satisfied'>4- Satisfied</option>
                 <option value='5- Very Satisfied'>5- Very Satisfied</option>
             </select>
-            {/* <input type="file" value={state.img} name='img' onChange={updateState}/> */}
+            <input type="file" value={state.img} name='img' onChange={updateState}/>
             <textarea placeholder='Tell us how you feel!' value={state.description} name='description' onChange={updateState}>
             </textarea>
             <button>Submit!</button>

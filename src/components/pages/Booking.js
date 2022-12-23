@@ -1,10 +1,9 @@
 import { React, useState }from 'react';
 import axios from 'axios';
 import '../../App.css';
-import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
 import { useNavigate } from 'react-router';
-// import Calendar from 'react-calendar';
+import './Booking.css';
+
 
 
 
